@@ -4,7 +4,7 @@ import Image from "next/image";
 import { forwardRef } from "react";
 import PageTransitionEffect from "./PageTransactionEffect";
 
-function Home() {
+export default function Home() {
   return (
     <PageTransitionEffect>
       <motion.div
@@ -36,4 +36,3 @@ function Home() {
   );
 }
 
-export default forwardRef(Home);
