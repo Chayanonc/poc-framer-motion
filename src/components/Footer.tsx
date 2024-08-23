@@ -51,20 +51,19 @@ export default function Footer() {
 
   return (
     <div className="h-[8vh] fixed bottom-0 w-full text-white">
-      <div className="flex w-full gap-1 items-center justify-center h-full bg-[#382519] uppercase font-bold">
+      <div className="flex w-full items-center justify-center h-full bg-[#382519] uppercase font-bold">
         {menus.map((item, key) => {
           return (
-            <Link className="h-full  " key={key} href={item.path}>
-              <div
-                className={`${
-                  item.path == pathname
-                    ? "bg-red-400 flex items-center px-2 h-full text-center"
-                    : " px-2 h-full text-center"
-                }`}
-                key={key}
-              >
-                {item.title}{" "}
-              </div>
+            <Link
+              className={`${
+                item.path == pathname
+                  ? "bg-red-400 flex items-center px-4 h-full text-center"
+                  : " px-4 h-full flex items-center text-center"
+              }`}
+              key={key}
+              href={item.path}
+            >
+              {item.title}
             </Link>
           );
         })}

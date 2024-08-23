@@ -2,10 +2,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { forwardRef } from "react";
+import PageTransitionEffect from "./PageTransactionEffect";
 
 function Home() {
   return (
-    <div>
+    <PageTransitionEffect>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{
@@ -31,7 +32,7 @@ function Home() {
           alt=""
         /> */}
       </motion.div>
-    </div>
+    </PageTransitionEffect>
   );
 }
 

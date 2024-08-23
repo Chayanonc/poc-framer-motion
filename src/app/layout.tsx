@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, IBM_Plex_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/layouts/MainLayout.layout";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const ibm = IBM_Plex_Sans_Thai({
+  subsets: ["thai", "latin"],
+  style: "normal",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Serene Home",
@@ -17,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={ibm.className}>
         <div className="w-full h-screen  overflow-hidden relative">
           <div className="relative min-h-screen w-full z-10">
             <MainLayout>

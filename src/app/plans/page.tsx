@@ -1,3 +1,9 @@
+import PlansView from "@/views/plans";
+
 export default function Detail() {
-  return <div>detail</div>;
+  return (
+    <div>
+      <PlansView />
+    </div>
+  );
 }
