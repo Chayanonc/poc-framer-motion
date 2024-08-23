@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ibm.className}>
+      <body className={ibm.className} cz-shortcut-listen="false">
         <div className="w-full h-screen  overflow-hidden relative">
           <div className="relative min-h-screen w-full z-10">
             <MainLayout>

@@ -1,0 +1,10 @@
+.imageContainer {
+  position: relative;
+  width: 600px;
+  height: 400px;
+}
+
+.overlay {
+  position: absolute;
+  pointer-events: none; /* Allows clicks to pass through to the underlying image map */
+}
