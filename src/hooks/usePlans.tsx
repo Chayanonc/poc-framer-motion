@@ -10,13 +10,13 @@ export default function usePlans() {
   const planFloor = () => {
     return (
       <div>
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} mode="popLayout">
           <motion.img
-            key={plan.image}
+            key={plan.floor}
             initial={{
               x: 0,
               opacity: 0,
-              scale: 0.8,
+              scale: 0.9,
             }}
             animate={{
               x: 0,
@@ -25,9 +25,10 @@ export default function usePlans() {
             }}
             transition={{
               ease: "linear",
-              duration: 0.8,
+              duration: 0.75,
               delay: 1,
             }}
+            exit={{ opacity: 0, scale: 1.2, x: 10 }}
             // exit={{
             //   x: 0,
             //   opacity: 0.5,

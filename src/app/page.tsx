@@ -8,19 +8,19 @@ export default function Home() {
   return (
     <PageTransitionEffect>
       <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        exit={{
-          opacity: 0,
-          y: -200,
-        }}
-        transition={{
-          duration: 0.8,
-          ease: "easeOut",
-        }}
+        // initial={{ opacity: 0, y: 100 }}
+        // animate={{
+        //   opacity: 1,
+        //   y: 0,
+        // }}
+        // exit={{
+        //   opacity: 0,
+        //   y: -200,
+        // }}
+        // transition={{
+        //   duration: 0.8,
+        //   ease: "easeOut",
+        // }}
       >
         <div className="bg-[url('https://sereneproperty.com/2019/plusudon/images/bannerhero.png')] h-[92vh] bg-cover bg-center bg-no-repeat"></div>
         {/* <Image
