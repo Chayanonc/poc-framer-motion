@@ -2,7 +2,7 @@ import PlansView from "@/views/plans";
 
 export default function Detail() {
   return (
-    <div>
+    <div className="h-full">
       <PlansView />
     </div>
   );

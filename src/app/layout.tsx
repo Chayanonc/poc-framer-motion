@@ -26,7 +26,7 @@ export default function RootLayout({
         <div className="w-full h-screen  overflow-hidden relative">
           <div className="relative min-h-screen w-full z-10">
             <MainLayout>
-              <main className="bg-transparent h-[92vh] overflow-x-hidden overflow-hidden">
+              <main className="h-[92vh] overflow-x-hidden overflow-hidden">
                 {children}
               </main>
             </MainLayout>

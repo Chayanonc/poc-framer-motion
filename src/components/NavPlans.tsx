@@ -24,7 +24,7 @@ export default function FloorPlan() {
       className="w-full absolute bottom-5 flex flex-col justify-center"
     >
       <Floor />
-      <PlansType />
+      {/* <PlansType /> */}
     </motion.div>
   );
 }

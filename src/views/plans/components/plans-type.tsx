@@ -1,9 +1,12 @@
 "use client";
+import { useFloorStore } from "@/store/useFloor.store";
 import { cn } from "@/utils/cn";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function PlansType() {
-  const [planSelect, setPlanSelect] = useState("floor");
+  const type = useFloorStore((state) => state.planType);
+  const setPlanType = useFloorStore((state) => state.setPlanType);
 
   const planType = [
     {
@@ -23,12 +26,14 @@ export default function PlansType() {
           <div
             key={key}
             onClick={() => {
-              setPlanSelect(item.key);
+              setPlanType(item.key);
             }}
           >
-            <div className={cn(planSelect == item.key ? "text-red-300" : "")}>
+            <motion.div
+              className={cn("cursor-pointer", type == item.key ? "text-red-300" : "")}
+            >
               {item.title}
-            </div>
+            </motion.div>
           </div>
         );
       })}

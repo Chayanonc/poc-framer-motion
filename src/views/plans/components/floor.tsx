@@ -1,55 +1,67 @@
+"use client";
+
 import { floor } from "@/constants/floor";
+import { useFloorStore } from "@/store/useFloor.store";
 import { cn } from "@/utils/cn";
 import {
   motion,
   useAnimate,
   useAnimationControls,
   usePresence,
+  Variants,
 } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Floor() {
-  const [selectFloor, setSelectFloor] = useState(1);
-  const [selectFloorImg, setSelectFloorImg] = useState(
-    "https://space.3dojmedia.com/escent-rayong2/plans/floors/15.png"
-  );
+  const setFloor = useFloorStore((state) => state.setFloor);
+  const floorState = useFloorStore((state) => state.floor);
 
   const handleSelectFloor = (f: number, img: string) => {
-    setSelectFloor(f);
-    setSelectFloorImg(img);
+    setFloor({
+      floor: f,
+      image: img,
+    });
+  };
+
+  const varients: Variants = {
+    hidden: {
+      x: 0,
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        ease: "linear",
+        duration: 5,
+        delay: 0.4,
+      },
+    },
   };
 
   return (
     <div className="mb-2">
-      <motion.img
-        initial={{
-          x: 0,
-          opacity: 0,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-        }}
-        transition={{
-          ease: "linear",
-          duration: 1,
-          delay: 0.4,
-          repeat: 2,
-        }}
-        src={selectFloorImg}
-        width={0}
-        height={0}
-        sizes="500px"
-        className="w-[500px]"
-      />
-
       <div className="flex  gap-2 justify-center w-full ">
         {floor.map((item, key) => {
           return (
             <motion.div
+              // variants={varients}
+              initial={{
+                x: 0,
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+                transition: {
+                  ease: "linear",
+                  // duration: key * 0.5,
+                  delay: 0.2 * key,
+                },
+              }}
               className={cn(
-                "rounded-full cursor-pointer h-[30px] w-[30px] justify-center items-center flex",
-                selectFloor == item.number
+                "rounded-full cursor-pointer h-[30px] w-[35px] justify-center items-center flex",
+                floorState.floor == item.number
                   ? "bg-black text-white"
                   : "text-black"
               )}
